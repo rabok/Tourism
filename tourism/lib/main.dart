@@ -78,7 +78,120 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('Tourism App')),
       drawer: Drawer(
-          // ... (Drawer code remains unchanged)
+        child: Container(
+          color: Colors.green[800],
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.green[700],
+                ),
+                child: Text(
+                  'Categories',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                  ),
+                ),
+              ),
+              ListTile(
+                title: Text(
+                  'National Parks',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NationalPark()),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text(
+                  'Lakes',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Lakes()),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text(
+                  'Hot Springs',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HotSprings()),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text(
+                  'Museums',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Museums()),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text(
+                  'Sports Grounds',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SportsGrounds()),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text(
+                  'Art Galleries',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ArtGallaries()),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text(
+                  'Hotels',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Hotels()),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text(
+                  'Landscapes',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Landscapes()),
+                  );
+                },
+              ),
+            ],
           ),
         ),
       ),
@@ -108,49 +221,53 @@ class HomePage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              NationalPark()), // Replace with the actual page class
-                    );
-                  },
-                  child: categories[0],
+                Flexible(
+                  flex: 1,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => NationalPark()),
+                      );
+                    },
+                    child: categories[0],
+                  ),
                 ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              Lakes()), // Replace with the actual page class
-                    );
-                  },
-                  child: categories[1],
+                Flexible(
+                  flex: 1,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Lakes()),
+                      );
+                    },
+                    child: categories[1],
+                  ),
                 ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              HotSprings()), // Replace with the actual page class
-                    );
-                  },
-                  child: categories[2],
+                Flexible(
+                  flex: 1,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HotSprings()),
+                      );
+                    },
+                    child: categories[2],
+                  ),
                 ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              Museums()), // Replace with the actual page class
-                    );
-                  },
-                  child: categories[3],
+                Flexible(
+                  flex: 1,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Museums()),
+                      );
+                    },
+                    child: categories[3],
+                  ),
                 ),
               ],
             ),
@@ -162,8 +279,16 @@ class HomePage extends StatelessWidget {
                 categories[5],
               ],
             ),
-          ),
-        ],
+            SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                categories[6],
+                categories[7],
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -178,10 +303,9 @@ class CategoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(8),
-      ),
+      width: 150,
+      height: 150,
+      color: color,
       child: Center(
         child: Text(
           title,
