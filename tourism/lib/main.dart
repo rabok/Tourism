@@ -218,61 +218,59 @@ class HomePage extends StatelessWidget {
               }).toList(),
             ),
             SizedBox(height: 16),
-           Wrap(
-  direction: Axis.horizontal,
-  alignment: WrapAlignment.spaceEvenly,
-  children: [
-    Flexible(
-      flex: 1,
-      child: GestureDetector(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => NationalPark()),
-          );
-        },
-        child: categories[0],
-      ),
-    ),
-    Flexible(
-      flex: 1,
-      child: GestureDetector(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Lakes()),
-          );
-        },
-        child: categories[1],
-      ),
-    ),
-    Flexible(
-      flex: 1,
-      child: GestureDetector(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => HotSprings()),
-          );
-        },
-        child: categories[2],
-      ),
-    ),
-    Flexible(
-      flex: 1,
-      child: GestureDetector(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Museums()),
-          );
-        },
-        child: categories[3],
-      ),
-    ),
-  ],
-),
-
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Flexible(
+                  flex: 1,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => NationalPark()),
+                      );
+                    },
+                    child: categories[0],
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Lakes()),
+                      );
+                    },
+                    child: categories[1],
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HotSprings()),
+                      );
+                    },
+                    child: categories[2],
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Museums()),
+                      );
+                    },
+                    child: categories[3],
+                  ),
+                ),
+              ],
+            ),
             SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
