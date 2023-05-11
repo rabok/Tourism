@@ -218,55 +218,61 @@ class HomePage extends StatelessWidget {
               }).toList(),
             ),
             SizedBox(height: 16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              NationalPark()), // Replace with the actual page class
-                    );
-                  },
-                  child: categories[0],
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              Lakes()), // Replace with the actual page class
-                    );
-                  },
-                  child: categories[1],
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              HotSprings()), // Replace with the actual page class
-                    );
-                  },
-                  child: categories[2],
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              Museums()), // Replace with the actual page class
-                    );
-                  },
-                  child: categories[3],
-                ),
-              ],
-            ),
+           Wrap(
+  direction: Axis.horizontal,
+  alignment: WrapAlignment.spaceEvenly,
+  children: [
+    Flexible(
+      flex: 1,
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => NationalPark()),
+          );
+        },
+        child: categories[0],
+      ),
+    ),
+    Flexible(
+      flex: 1,
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Lakes()),
+          );
+        },
+        child: categories[1],
+      ),
+    ),
+    Flexible(
+      flex: 1,
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => HotSprings()),
+          );
+        },
+        child: categories[2],
+      ),
+    ),
+    Flexible(
+      flex: 1,
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Museums()),
+          );
+        },
+        child: categories[3],
+      ),
+    ),
+  ],
+),
+
             SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
